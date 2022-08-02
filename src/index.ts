@@ -11,7 +11,7 @@ app.get("/", (req: Request, res: Response, next: NextFunction): void => {
     } catch (error) {
         next(error);
     }
-})
+});
 
 app.get("/york", (req: Request, res: Response, next: NextFunction): void => {
     try {
@@ -19,11 +19,19 @@ app.get("/york", (req: Request, res: Response, next: NextFunction): void => {
     } catch (error) {
         next(error);
     }
-})
+});
+
+app.get("/yo", (req: Request, res: Response, next: NextFunction): void => {
+    try {
+        res.send("Hello World");
+    } catch (error) {
+        next(error);
+    }
+});
 
 
-const PORT = 3000;
+const PORT = 80;
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)
-})
+});
